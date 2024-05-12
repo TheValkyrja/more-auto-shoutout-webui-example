@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可折叠下拉框演示</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        details {
+            margin-bottom: 20px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        div {
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            display: flex;
+        }
+        
+        .left-column {
+            flex: 1;
+            margin-right: 20px;
+        }
+        
+        .right-column {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>MAS UI配置示例</h1>
+    <div class="container">
+        <div class="left-column">
+            <form id="dataCollector">
+                <div id="configContainer">
+                    <details>
+                        <summary>常规设置</summary>
+                        <div>
+                            <label for="globalCooldown">全局冷却：</label>
+                            <input type="number" id="globalCooldown" name="globalCooldown" min="0" max="9999" value="30"
+                                autocomplete="off">
+                        </div>
+                    </details>
+                </div>
+                <button type="button" id="addConfigBtn">添加配置..</button>
+                <br>
+                <button type="button" id="submitBtn">生成存档字符串...</button>
+            </form>
+            <p>这是一个可折叠下拉框的演示网页。点击 "常规设置" 可以展开或折叠相应的设置选项。你可以在下拉框中修改设置，然后点击 "保存" 按钮应用更改。</p>
+            <label for="configOutput">配置存档文本：</label>
+            <textarea id="configOutput" rows="3" cols="50" readonly></textarea>
+            <button type="button" id="copyBtn">点击复制..</button>
+            <button type="button" id="genConfig!">生成配置！！</button>
+            </br>
+            </br>
+            <label for="jsonInput">粘贴并读取配置..</label>
+            <textarea id="jsonInput" rows="5" cols="50"></textarea>
+            <button type="button" id="readFromJson">读取配置..</button>
+        </div>
+        <div class="right-column">
+            <label for="configTrans">配置文件预览：</label>
+            <textarea id="configTrans" rows="30" cols="50" readonly></textarea>
+        </div>
+    </div>
+</body>
+<script src="js/functions.js"></script>
+<script src="js/eventListeners.js"></script>
+<script src="js/reverse-fill-in.js"></script>
+<script src="js/translate.js"></script>
+<script src="js/script.js"></script>

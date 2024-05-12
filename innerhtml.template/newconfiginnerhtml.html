@@ -1,0 +1,143 @@
+<summary>未命名配置</summary>
+  <div>
+    <label for="triggerMode">触发方式：</label>
+    <select id="triggerMode" name="triggerMode" autocomplete="off">
+      <option value="random">随机</option>
+      <option value="sequential_one">每次顺序发送一条</option>
+      <option value="sequential_all">每次全部发送</option>
+    </select>
+    <br>
+    <label for="cooldownTime">冷却时间：</label>
+    <input type="number" id="cooldownTime" name="cooldownTime" min="0" value="30" autocomplete="off">
+    <br>
+    <label for="name">名字：</label>
+    <input type="text" id="name" name="name" autocomplete="off">
+    <br>
+    <div class="subConfigContainer">
+      <details>
+        <summary>触发条件：</summary>
+        <div>
+          <label for="trigger_on">检测到：</label>
+          <select id="trigger_on" name="trigger_on" autocomplete="off">
+            <option value="">请选择...</option>
+            <option value="LongswordLevelChanged">太刀气刃等级</option>
+            <option value="WeaponType">持有武器</option>
+            <option value="QuestState">任务状态</option>
+            <option value="Fsm">动作代码</option>
+            <option value="UseItem">按下道具</option>
+            <option value="InsectGlaiveLight">猎虫精华变动</option>
+            <option value="ChargeBlade">充能斧状态</option>
+          </select>
+          <br>
+          <div id="extraTriggerValue">
+            <div id="longswordLevelConfig" style="display: none;">
+              <label for="onNewLevel">新：</label>
+              <input type="number" id="onNewLevel" name="onNewLevel" value="3" min="0" max="3" autocomplete="off">
+              <br>
+              <label for="onOldLevel">原：</label>
+              <input type="number" id="onOldLevel" name="onOldLevel" min="0" max="3" autocomplete="off">
+              <br>
+            </div>
+            <div id="weaponTypeConfig" style="display: none;">
+              <label for="onWeaponId">武器id：</label>
+              <input type="number" id="onWeaponId" name="onWeaponId" value="0" min="0" max="13" autocomplete="off">
+              <br>
+            </div>
+            <div id="questStateConfig" style="display: none;">
+              <label for="onQuestState">任务状态：</label>
+              <input type="number" id="onQuestState" name="onQuestState" min="0" max="3" autocomplete="off">
+              <br>
+            </div>
+            <div id="fsmConfig" style="display: none;">
+              <label>新状态：</label>
+              <select id="onNewFsmIndex" name="onNewFsmIndex" autocomplete="off">
+                <option value="3">拔刀</option>
+                <option value="0">收刀/硬直</option>
+              </select>
+              <label for="onNewFsmId">新动作ID：</label>
+              <input type="number" id="onNewFsmId" name="onNewFsmId" min="0" max="499" autocomplete="off">
+              <br>
+              <label for="onOldFsmIndex">旧状态：</label>
+              <select id="onOldFsmIndex" name="onOldFsmIndex" autocomplete="off">
+                <option value="">不检测</option>
+                <option value="3">拔刀</option>
+                <option value="0">收刀/硬直</option>
+              </select>
+              <label for="onOldFsmId">旧动作ID：</label>
+              <input type="number" id="onOldFsmId" name="onOldFsmId" min="0" max="499" autocomplete="off">
+              <br>
+            </div>
+            <div id="useItemConfig" style="display: none;">
+              <label for="onUseItem">按下道具ID：</label>
+              <input type="number" id="onUseItem" name="onUseItem" min="0" max="99999" autocomplete="off">
+              <br>
+            </div>
+            <div id="insectGlaiveLightConfig" style="display: none;">
+              <label for="onInsectGlaiveLight">当猎虫精华：</label>
+              <br>
+              <label>红灯现：</label>
+              <select id="onInsectRedNew" name="onInsectRedNew" autocomplete="off">
+                <option value="">不检测</option>
+                <option value="1">亮</option>
+                <option value="0">灭</option>
+              </select>
+              <label>白灯现：</label>
+              <select id="onInsectWhiteNew" name="onInsectWhiteNew" autocomplete="off">
+                <option value="">不检测</option>
+                <option value="1">亮</option>
+                <option value="0">灭</option>
+              </select>
+              <label>黄灯现：</label>
+              <select id="onInsectYellowNew" name="onInsectYellowNew" autocomplete="off">
+                <option value="">不检测</option>
+                <option value="1">亮</option>
+                <option value="0">灭</option>
+              </select>
+              <br>
+              <label>红灯原：</label>
+              <select id="onInsectRedOld" name="onInsectRedOld" autocomplete="off">
+                <option value="">不检测</option>
+                <option value="1">亮</option>
+                <option value="0">灭</option>
+              </select>
+              <label>白灯原：</label>
+              <select id="onInsectWhiteOld" name="onInsectWhiteOld" autocomplete="off">
+                <option value="">不检测</option>
+                <option value="1">亮</option>
+                <option value="0">灭</option>
+              </select>
+              <label>黄灯原：</label>
+              <select id="onInsectYellowOld" name="onInsectYellowOld" autocomplete="off">
+                <option value="">不检测</option>
+                <option value="1">亮</option>
+                <option value="0">灭</option>
+              </select>
+              <br>
+            </div>
+            <div id="chargeBladeConfig" style="display: none;">
+              <label for="onChargeBladestate">没看懂，暂时只提供一体式简易触发器：</label>
+              <br>
+              <select id="onChargeBladeState" name="onChargeBladeState" autocomplete="off">
+                <option value="swordCharged">红剑启用</option>
+                <option value="shieldCharged">红盾启用</option>
+                <option value="powerAxeOn">电锯启用</option>
+                <option value="phialsLoaded">瓶子装填</option>
+              </select>
+              <br>
+            </div>
+          </div>
+        </div>
+      </details>
+      <details>
+        <summary>动作</summary>
+        <div>
+          <label for="textContent">发送文本内容：</label>
+          <input type="text" id="textContent" name="textContent" autocomplete="off">
+          <br>
+        </div>
+      </details>
+    </div>
+    <br>
+    <button type="button" class="addCheckCdtBtn">添加检测条件</button>
+    <button type="button" class="deleteConfigBtn">删除配置</button>
+  </div>

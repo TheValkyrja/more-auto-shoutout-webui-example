@@ -1,0 +1,60 @@
+<summary>检查条件</summary>
+        <div>
+            <label for="check">检查：</label>
+            <select id="check" name="check">
+            <option value="">请选择...</option>
+            <option value="LongswordLevel">太刀气刃等级</option>
+            <option value="WeaponType">当前武器</option>
+            <option value="QuestState">任务状态</option>
+            <option value="Fsm">动作代码</option>
+            <option value="Damage">伤害检测</option>
+            </select>
+            <br>
+            <div id="extraCheckValue">
+            <div id="longswordLevelCheck" style="display: none;">
+                <label for="checkLSLevel">新：</label>
+                <input type="number" id="checkLSLevel" name="checkLSLevel" min="0" max="3" autocomplete="off">
+                <br>
+            </div>
+            <div id="weaponTypeCheck" style="display: none;">
+                <label for="checkWeaponId">武器id：</label>
+                <input type="number" id="checkWeaponId" name="checkWeaponId" min="0" max="13" autocomplete="off">
+                <br>
+            </div>
+            <div id="questStateCheck" style="display: none;">
+                <label for="checkQuestState">任务状态：</label>
+                <input type="number" id="checkQuestState" name="checkQuestState" min="0" max="3" autocomplete="off">
+                <br>
+            </div>
+            <div id="fsmCheck" style="display: none;">
+                <label>状态：</label>
+                <select id="checkFsmIndex" name="checkFsmIndex" autocomplete="off">
+                <option value="3">拔刀</option>
+                <option value="0">收刀/硬直</option>
+                </select>
+                <label for="checkFsmId">动作ID：</label>
+                <input type="number" id="checkFsmId" name="checkFsmId" min="0" max="499" autocomplete="off">
+                <br>
+            </div>
+            <div id="dmgCheck" style="display: none;">
+                <label for="checkDmgAmount">伤害量：</label>
+                <select id="dmgComparison" name="checkDmgSinceFsmIndex" autocomplete="off">
+                <option value="gt">大于</option>
+                <option value="le">小于或等于</option>
+                </select>
+                <input type="number" id="checkDmgAmount" name="checkDmgAmount" autocomplete="off">
+                <br>
+                <label>状态：</label>
+                <select id="checkDmgSinceFsmIndex" name="checkDmgSinceFsmIndex" autocomplete="off">
+                <option value="3">拔刀</option>
+                <option value="0">收刀/硬直</option>
+                </select>
+                <label for="checkDmgSinceFsmId">动作ID：</label>
+                <input type="number" id="checkDmgSinceFsmId" name="checkDmgSinceFsmId" min="0" max="499" autocomplete="off">
+                <br>
+                <label for="timeoutValue">检测时长区间（毫秒）：</label>
+                <input type="number" id="timeoutValue" name="timeoutValue" autocomplete="off">
+                <br>
+            </div>
+            <button type="button" class="deleteCheckCdtBtn">删除条件检测</button>
+        </div>
