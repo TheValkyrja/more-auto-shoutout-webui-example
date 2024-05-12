@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+details {
+    margin-bottom: 20px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+div {
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+}
+
+.left-column {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.right-column {
+    flex: 1;
+}
